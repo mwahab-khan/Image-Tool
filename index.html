@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azan World - AI Image Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><b>Azan World</b></h1>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <label for="prompt-input">Enter your image prompt</label>
+            <textarea id="prompt-input" placeholder="e.g., A majestic lion roaring in a savanna at sunset, photorealistic" rows="5"></textarea>
+
+            <div class="aspect-ratio-group">
+                <label>Aspect Ratio:</label>
+                <div class="radio-buttons">
+                    <input type="radio" id="square" name="aspect-ratio" value="1:1" checked>
+                    <label for="square">Square (1:1)</label>
+                    <input type="radio" id="portrait" name="aspect-ratio" value="9:16">
+                    <label for="portrait">Portrait (9:16)</label>
+                    <input type="radio" id="landscape" name="aspect-ratio" value="16:9">
+                    <label for="landscape">Landscape (16:9)</label>
+                </div>
+            </div>
+
+            <div class="upload-box">
+                <label for="reference-image-upload">Upload a reference image (optional)</label>
+                <input type="file" id="reference-image-upload" accept=".jpg, .png">
+                <div class="image-preview" id="image-preview">
+                    <p>No image selected</p>
+                    <img src="#" alt="Reference Image Preview">
+                </div>
+            </div>
+
+            <button id="generate-btn">Generate Image</button>
+        </section>
+
+        <section class="result-section">
+            <h2>Generated Image</h2>
+            <div id="loading-spinner" class="spinner" style="display: none;"></div>
+            <p id="error-message" class="error-message" style="display: none;"></p>
+            <div class="image-display" id="image-display">
+                <img id="generated-image" src="#" alt="Generated Image" style="display: none;">
+                <p id="placeholder-text">Your generated image will appear here.</p>
+            </div>
+            <button id="download-btn" style="display: none;">Download Image</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+                                                                                 </html>
